@@ -98,12 +98,11 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
 }
 `;
 
-const canvas = document.querySelector('canvas');
     async function init() {
       const adapter = await navigator.gpu.requestAdapter();
       const device = await adapter.requestDevice();
 
-      
+      const canvas = document.querySelector('canvas');
       //let size = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
       //size *= 0.75;
       canvas.width = window.innerWidth;
@@ -336,6 +335,7 @@ const canvas = document.querySelector('canvas');
     init();
 
 window.onorientationchange = function(event) {
+  const canvas = document.querySelector('canvas');
   canvas.width = window.width;
   canvas.height = window.height;
 }
