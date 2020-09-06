@@ -340,4 +340,4 @@ function resize() {
     init();
 
 
-window.addEventListener('resize', resize, false);
+//window.addEventListener('resize', resize, false);
