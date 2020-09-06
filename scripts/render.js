@@ -335,7 +335,7 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
     init();
 
 window.onorientationchange = function(event) {
-  const canvas = document.querySelector('canvas');
+  //const canvas = document.querySelector('canvas');
   canvas.width = canvas.height;
   canvas.height = canvas.width;
 }
