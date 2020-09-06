@@ -1,0 +1,45 @@
+<!-- Based off of https://github.com/austinEng/webgpu-samples/blob/master/compute_boids.html -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=1200">
+  <title>WebGPU Compute Shader</title>
+  <script src="scripts/gl-matrix-min.js"></script>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+  body {
+      font-family: system-ui;
+      color: #f7f7ff;
+      background-color: rgb(38, 38, 127);
+      text-align: center;
+  }
+  canvas {
+      margin: 0 auto;
+  }
+  </style>
+</head>
+<body>
+  <div id="scripts/contents">
+    <h1>Compute Shader Flocking</h1>
+    <p>
+        This demo uses a compute shader to update the positions of objects in parallel.
+    </p>
+    <canvas></canvas>
+  </div>
+  <div id="error">
+      <h2>WebGPU not available</h2>
+      <p>
+          Make sure you are on a system with WebGPU enabled. In
+          Safari, first make sure the Developer Menu is visible (Preferences >
+          Advanced), then Develop > Experimental Features > WebGPU.
+      </p>
+      <p>
+        In addition, you must be using Safari Technology Preview 92 or above.
+        You can get the latest STP <a href="https://developer.apple.com/safari/download/">here</a>.
+      </p>
+  </div>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
