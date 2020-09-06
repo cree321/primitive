@@ -332,12 +332,10 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
       requestAnimationFrame(frame);
     }
 
-function resize() {
-    canvas.style.width = window.width;
-    canvas.style.height = window.height;
-};
-
     init();
 
-
-//window.addEventListener('resize', resize, false);
+function resize() {
+    canvas.width = window.width;
+    canvas.height = window.height;
+};
+window.addEventListener('resize', resize, false);
