@@ -334,8 +334,7 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
 
     init();
 
-function resize() {
-    canvas.width = window.width;
-    canvas.height = window.height;
-};
-window.addEventListener('resize', resize, false);
+window.onorientationchange = function(event) {
+  canvas.width = window.width;
+  canvas.height = window.height;
+}
