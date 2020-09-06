@@ -103,10 +103,10 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
       const device = await adapter.requestDevice();
 
       const canvas = document.querySelector('canvas');
-      let size = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
-      size *= 0.75;
-      canvas.width = size;
-      canvas.height = size;
+      //let size = window.innerWidth < window.innerHeight ? window.innerWidth : window.innerHeight;
+      //size *= 0.75;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
       const context = canvas.getContext('gpu');
 
       const swapChain = context.configureSwapChain({
