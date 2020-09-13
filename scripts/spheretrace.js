@@ -140,7 +140,7 @@ async function init() {
           entryPoint: "fragment_main"
         },
 
-        primitiveTopology: "point-list",
+        primitiveTopology: "triangle-list",
 
         depthStencilState: {
           depthWriteEnabled: true,
