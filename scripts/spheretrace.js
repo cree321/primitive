@@ -1,7 +1,7 @@
 if (!navigator.gpu || GPUBufferUsage.COPY_SRC === undefined)
       document.body.className = 'error';
 
-    const numParticles = 1500;
+    const numSamples = 1500;
 
     const renderShadersWHLSL = `
 vertex float4 vertex_main(float2 particlePos : attribute(0), float2 particleVel : attribute(1), float2 position : attribute(2)) : SV_Position
@@ -9,7 +9,7 @@ vertex float4 vertex_main(float2 particlePos : attribute(0), float2 particleVel 
     float angle = -atan(particleVel.x / particleVel.y);
     float2 result = float2(position.x * cos(angle) - position.y * sin(angle),
         position.x * sin(angle) + position.y * cos(angle));
-    return float4(result + particlePos, 0, 1);
+    return float4(particlePos, 0, 1);
 }
 
 fragment float4 fragment_main() : SV_Target 0
@@ -40,7 +40,7 @@ compute void compute_main(constant SimParams[] paramsBuffer : register(b0), devi
 
     SimParams params = paramsBuffer[0];
 
-    if (index >= ${numParticles}) { 
+    if (index >= ${numSamples}) { 
         return;
     }
 
