@@ -31,9 +31,6 @@ async function helloTriangle() {
 
     fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
     {
-      if(position.x % 2 == 0) {
-        return color;
-      }
       return {0,0,0,1}
     }
     `;
