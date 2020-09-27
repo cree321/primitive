@@ -23,6 +23,8 @@ canvas {
 
 textarea {
   background-color: #fff;
+  width: 40%;
+  height: 30%;
 }
 
 div#log {
