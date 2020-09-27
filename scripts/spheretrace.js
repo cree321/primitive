@@ -122,8 +122,8 @@ async function helloTriangle() {
     /*** Swap Chain Setup ***/
     
     const canvas = document.querySelector("canvas");
-    canvas.width = window.width/2;
-    canvas.height = window.height/2;
+    canvas.width = 600;
+    canvas.height = 600;
 
     const gpuContext = canvas.getContext("gpu");
     
