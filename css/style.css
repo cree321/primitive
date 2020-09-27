@@ -21,6 +21,10 @@ canvas {
     height: 100%;
 }
 
+textarea {
+  background-color: #fff;
+}
+
 div#log {
     background-color: rgb(231, 231, 231);
     padding: 20px;
