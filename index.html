@@ -10,7 +10,25 @@
 </head>
 <body>
   <canvas></canvas>
-  <textarea id="shader_src" placeholder="Enter shader code here."></textarea>
+  <textarea id="shader_src" placeholder="Enter shader code here.">struct FragmentData {
+        float4 position : SV_Position;
+        float4 color : attribute(${colorLocation});
+    }
+
+    vertex FragmentData vertexMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation}))
+    {
+        FragmentData out;
+
+        out.position = position;
+        out.color = color;
+
+        return out;
+    }
+
+    fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
+    {
+      return color;
+    }</textarea>
   <!--textarea id="vert" placeholder="Enter vetex shader code here."></textarea-->
   <br/>
   <button id="run" type="button">compile</button>
