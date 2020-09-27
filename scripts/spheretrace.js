@@ -176,7 +176,7 @@ async function helloTriangle() {
     
     /* Shader Compilation */
     function compileShaders() {
-        whlslSource = document.querySelector("#shader_src");
+        whlslSource = document.querySelector("#shader_src").value;
         shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
         vertexStageDescriptor = { module: shaderModule, entryPoint: "vertexMain" };
         fragmentStageDescriptor = { module: shaderModule, entryPoint: "fragmentMain" };
