@@ -13,7 +13,7 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    var whlslSource = `
+    const whlslSource = `
     struct FragmentData {
         float4 position : SV_Position;
         float4 color : attribute(${colorLocation});
@@ -29,16 +29,16 @@ async function helloTriangle() {
         return out;
     }
 
-    fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
+    fragment float4 fragmentMain(float4 color : attribute(${colorLocation})) : SV_Target 0
     {
-      return color;
+        return color;
     }
     `;
-    var shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
+    const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     
     /* GPUPipelineStageDescriptors */
-    var vertexStageDescriptor = { module: shaderModule, entryPoint: "vertexMain" };
-    var fragmentStageDescriptor = { module: shaderModule, entryPoint: "fragmentMain" };
+    const vertexStageDescriptor = { module: shaderModule, entryPoint: "vertexMain" };
+    const fragmentStageDescriptor = { module: shaderModule, entryPoint: "fragmentMain" };
     
     /*** Vertex Buffer Setup ***/
     
@@ -173,16 +173,6 @@ async function helloTriangle() {
     /* GPUQueue */
     const queue = device.getQueue();
     queue.submit([commandBuffer]);
-    
-    /* Shader Compilation */
-    function compileShaders() {
-        whlslSource = document.querySelector("#shader_src").value;
-        shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
-        vertexStageDescriptor = { module: shaderModule, entryPoint: "vertexMain" };
-        fragmentStageDescriptor = { module: shaderModule, entryPoint: "fragmentMain" };
-    }
-    document.querySelector("#run").addEventListener("click", compileShaders);
 }
 
 window.addEventListener("DOMContentLoaded", helloTriangle);
-
