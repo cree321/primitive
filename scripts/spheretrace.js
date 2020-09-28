@@ -14,27 +14,7 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    const whlslSource = `
-    struct FragmentData {
-        float4 position : SV_Position;
-        float4 color : attribute(${colorLocation});
-    }
-
-    vertex FragmentData vertexMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation}))
-    {
-        FragmentData out;
-
-        out.position = position;
-        out.color = color;
-
-        return out;
-    }
-
-    fragment float4 fragmentMain(float4 color : attribute(${colorLocation})) : SV_Target 0
-    {
-        return color;
-    }
-    `;
+    const whlslSource = "struct FragmentData {float4 position : SV_Position;float4 color : attribute(${colorLocation});}vertex FragmentData vertexMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) {FragmentData out;out.position = position;out.color = color;return out;}fragment float4 fragmentMain(float4 color : attribute(${colorLocation})) : SV_Target 0 {return color;}";
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     
     /* GPUPipelineStageDescriptors */
