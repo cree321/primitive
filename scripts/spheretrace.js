@@ -15,8 +15,8 @@ async function helloTriangle() {
     const colorLocation = 1;
 
     const whlslSource = `${document.getElementById("shader-src").value}`;
-    alert(whlslSource);
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
+    alert(shaderModule);
     
     /* GPUPipelineStageDescriptors */
     const vertexStageDescriptor = { module: shaderModule, entryPoint: "vertexMain" };
