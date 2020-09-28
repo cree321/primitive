@@ -27,11 +27,10 @@ vertex FragmentData vertexMain(float4 position : attribute(${positionLocation}),
   return out;
 }
 
-fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
+fragment float4 fragmentMain(float4 color : attribute(${colorLocation})) : SV_Target 0
 {
   return color;
-}
-</textarea>
+}</textarea>
   <!--textarea id="vert" placeholder="Enter vetex shader code here."></textarea-->
   <br/>
   <button id="run" type="button" onclick="helloTriangle()">compile</button>
