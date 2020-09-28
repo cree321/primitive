@@ -9,7 +9,9 @@
   <link rel="manifest" href="manifest.webmanifest"/>
 </head>
 <body>
-  <script id="shader_src" type="x-shader/x-render">`
+  <script type="x-shader/x-render"></script>
+  <canvas></canvas>
+  <textarea id="shader_src" rows="20" placeholder="Enter shader code here.">`
     struct FragmentData {
         float4 position : SV_Position;
         float4 color : attribute(${colorLocation});
@@ -29,9 +31,7 @@
     {
       return color;
     }
-    `</script>
-  <canvas></canvas>
-  <textarea rows="20" placeholder="Enter shader code here."></textarea>
+    `</textarea>
   <!--textarea id="vert" placeholder="Enter vetex shader code here."></textarea-->
   <br/>
   <button id="run" type="button">compile</button>
