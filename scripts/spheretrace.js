@@ -62,9 +62,9 @@ async function helloTriangle() {
     const vertexWriteArray = new Float32Array(vertexArrayBuffer);
     vertexWriteArray.set([
         // x, y, z, w, r, g, b, a
-        -0.9, 0.9, 0, 1, 0, 1, 1, 1,
-        -0.9, -0.9, 0, 1, 1, 1, 0, 1,
-        0.9, 0.9, 0, 1, 1, 0, 1, 1
+        -1, 1, 0, 1, 0, 1, 1, 1,
+        -1, -1, 0, 1, 1, 1, 0, 1,
+        1, 1, 0, 1, 1, 0, 1, 1
     ]);
     vertexBuffer.unmap();
     
@@ -123,8 +123,8 @@ async function helloTriangle() {
     /*** Swap Chain Setup ***/
     
     const canvas = document.querySelector("canvas");
-    canvas.width = 600;
-    canvas.height = 600;
+    canvas.width = 60;
+    canvas.height = 60;
 
     const gpuContext = canvas.getContext("gpu");
     
