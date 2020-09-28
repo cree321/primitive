@@ -42,9 +42,9 @@ async function helloTriangle() {
     const vertexWriteArray = new Float32Array(vertexArrayBuffer);
     vertexWriteArray.set([
         // x, y, z, w, r, g, b, a
-        -1, 1, 0, 1, 0, 1, 1, 1,
-        -1, -1, 0, 1, 1, 1, 0, 1,
-        1, 1, 0, 1, 1, 0, 1, 1
+        -0.9, 0.9, 0, 1, 0, 1, 1, 1,
+        -0.9, -0.9, 0, 1, 1, 1, 0, 1,
+        0.9, 0.9, 0, 1, 1, 0, 1, 1
     ]);
     vertexBuffer.unmap();
     
