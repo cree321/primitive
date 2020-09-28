@@ -1,4 +1,4 @@
-console.log(document.getElementById("shader_src").value);
+console.log(document.getElementById("shader-src").value);
 async function helloTriangle() {
     if (!navigator.gpu || GPUBufferUsage.COPY_SRC === undefined) {
         document.body.className = 'error';
