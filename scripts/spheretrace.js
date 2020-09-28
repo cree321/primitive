@@ -1,5 +1,8 @@
 //console.log(document.getElementById("shader-src").value);
 async function helloTriangle() {
+    function getShader() {
+        return document.getElementById("shader-src").value;
+    }
     if (!navigator.gpu || GPUBufferUsage.COPY_SRC === undefined) {
         document.body.className = 'error';
         return;
@@ -14,7 +17,7 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    const whlslSource = `${document.getElementById("shader-src").value}`;
+    const whlslSource = getShader();
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     if(shaderModule){alert("Success!");}
     
