@@ -59,7 +59,7 @@ async function helloTriangle() {
         // x, y, z, w, r, g, b, a
         -0.9, 0.9, 0, 1, 0, 1, 1, 1,
         -0.9, -0.9, 0, 1, 1, 1, 0, 1,
-        0.9, 0.9, 0, 1, 1, 0, 1, 1
+        1.9, 0.9, 0, 1, 1, 0, 1, 1
     ]);
     vertexBuffer.unmap();
     
