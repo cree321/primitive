@@ -25,7 +25,7 @@ async function helloTriangle() {
         out.color = color;
         return out;
     }
-    fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
+    fragment float4 fragmentMain(float4 color : attribute(${colorLocation})) : SV_Target 0
     {
       return color;
     }
