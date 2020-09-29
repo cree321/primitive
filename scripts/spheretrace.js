@@ -27,7 +27,7 @@ async function helloTriangle() {
     }
     fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
     {
-      ${document.getElementById("shader-src").value}
+      ${document.getElementById("shader-src").value};
     }
     `;
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
