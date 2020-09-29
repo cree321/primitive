@@ -1,4 +1,3 @@
-//console.log(document.getElementById("shader-src").value);
 async function helloTriangle() {
     if (!navigator.gpu || GPUBufferUsage.COPY_SRC === undefined) {
         document.body.className = 'error';
@@ -14,7 +13,23 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    const whlslSource = `${document.getElementById("shader-src").value.replace(/\n/g, "\r\n")}`;
+    const whlslSource = `
+    struct FragmentData {
+        float4 position : SV_Position;
+        float4 color : attribute(${colorLocation});
+    }
+    vertex FragmentData vertexMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation}))
+    {
+        FragmentData out;
+        out.position = position;
+        out.color = color;
+        return out;
+    }
+    fragment float4 fragmentMain(float4 position : attribute(${positionLocation}), float4 color : attribute(${colorLocation})) : SV_Target 0
+    {
+      ${document.getElementById("shader-src").value}
+    }
+    `;
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     
     /* GPUPipelineStageDescriptors */
