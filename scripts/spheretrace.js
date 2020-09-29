@@ -169,6 +169,8 @@ async function helloTriangle() {
     /* GPUQueue */
     const queue = device.getQueue();
     queue.submit([commandBuffer]);
+    
+    alert(whlslSource);
 }
 
 //window.addEventListener("DOMContentLoaded", helloTriangle);
