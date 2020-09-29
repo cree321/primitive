@@ -14,7 +14,7 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    const whlslSource = new String(document.getElementById("shader-src").value);
+    const whlslSource = document.getElementById("shader-src").value.replace(/\n/g, "\r\n");
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     
     /* GPUPipelineStageDescriptors */
@@ -154,8 +154,6 @@ async function helloTriangle() {
     /* GPUQueue */
     const queue = device.getQueue();
     queue.submit([commandBuffer]);
-    
-    alert("Complete.");
 }
 
 //window.addEventListener("DOMContentLoaded", helloTriangle);
