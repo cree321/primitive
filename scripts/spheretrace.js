@@ -14,7 +14,7 @@ async function helloTriangle() {
     const positionLocation = 0;
     const colorLocation = 1;
 
-    const whlslSource = `${document.getElementById("shader-src").value}`;
+    const whlslSource = new String(document.getElementById("shader-src").value);
     const shaderModule = device.createShaderModule({ code: whlslSource, isWHLSL: true });
     
     /* GPUPipelineStageDescriptors */
