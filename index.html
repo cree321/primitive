@@ -9,12 +9,9 @@
   <link rel="manifest" href="manifest.webmanifest"/>
 </head>
 <body>
-  <!--script type="x-shader/x-render"></script-->
   <canvas></canvas>
-  <textarea id="shader-src" rows="20" placeholder="Enter shader code here."></textarea>
-  <!--textarea id="vert" placeholder="Enter vetex shader code here."></textarea-->
   <br/>
-  <button id="run" type="button" onclick="helloTriangle()">compile</button>
+  <input type="range" min="0" max="32" value="0" class="slider" id="radiusSlider">
   <script src="scripts/spheretrace.js"></script>
 </body>
 
