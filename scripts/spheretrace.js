@@ -315,7 +315,7 @@ compute void horizontal(constant uint[] source : register(u${sourceBufferBinding
         accumulateChannels(@channels, startColor, weight);
     }
 
-    output[globalIndex] = makeRGBA(channels[0], channels[1], channels[2], 255);
+    output[globalIndex] = makeRGBA(126, channels[1], channels[2], 255);
 }
 
 [numthreads(1, ${threadsPerThreadgroup}, 1)]
@@ -335,7 +335,7 @@ compute void vertical(constant uint[] source : register(u${sourceBufferBindingNu
         accumulateChannels(@channels, startColor, weight);
     }
 
-    output[globalIndex] = makeRGBA(126, channels[1], channels[2], 255);
+    output[globalIndex] = makeRGBA(channels[0], channels[1], channels[2], 255);
 }
 `;
 }
