@@ -1,5 +1,6 @@
 {
   "name": "primitive",
-  "short_name": "primitive",
-  "display": "standalone"
+  "short_name": "PriM",
+  "display": "standalone",
+  "background_color": "#000"
 }
