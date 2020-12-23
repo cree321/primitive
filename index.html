@@ -5,8 +5,27 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1,maximum-scale=1,viewport-fit=cover,user-scalable=no"/>
   <title>primitive</title>
-  <link rel="stylesheet" href="css/style.css"/>
   <link rel="manifest" href="manifest.webmanifest"/>
+  <style>
+body{
+  overflow: hidden;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #333;
+}
+#renderCanvas {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+input {
+  width: 75%;
+  position: fixed;
+  left: 50%;
+  margin-left: -37.5%;
+}
+  </style>
 </head>
 <body>
   <canvas id="renderCanvas"></canvas>
