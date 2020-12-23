@@ -15,8 +15,6 @@ const maxUniformsSize = (32 + 2) * Float32Array.BYTES_PER_ELEMENT;
 
 let image, context2d, device;
 
-const width = 600;
-
 async function init() {
     if (!navigator.gpu || GPUBufferUsage.COPY_SRC === undefined) {
         document.body.className = "error";
@@ -50,17 +48,13 @@ async function init() {
 
 async function loadImage(canvas) {
     /* Image */
-    const image = new Image();
-    const imageLoadPromise = new Promise(resolve => { 
-        image.onload = () => resolve(); 
-        image.src = "resources/safari-alpha.png"
-    });
-    await Promise.resolve(imageLoadPromise);
+    
 
-    canvas.height = width;
-    canvas.width = width;
+    canvas.width = window.innerHeight;
+    canvas.height = window.innerWidth;
 
-    context2d.drawImage(image, 0, 0, width, width);
+    const image = new Image(canvas.width/2, canvas.height/2);
+    context2d.drawImage(image, 0, 0);
 
     return image;
 }
@@ -361,6 +355,7 @@ compute void vertical(constant uint[] source : register(u${sourceBufferBindingNu
 
 window.onorientationchange = function(event) {
   //const canvas = document.querySelector('canvas');
-  canvas.width = canvas.height;
-  canvas.height = canvas.width;
+  canvas.width = window.innerHeight;
+  canvas.height = window.innerWidth;
+  image = new Image(canvas.width/2, canvas.height/2);
 }
