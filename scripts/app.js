@@ -1,3 +1,9 @@
+"use strict";
+
+/** Game **/
+const vFOV = 1.2;// 1.2 rads ~ 70 deg
+
+
 const threadsPerThreadgroup = 32;
 
 const sourceBufferBindingNum = 0;
