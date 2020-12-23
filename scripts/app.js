@@ -34,7 +34,7 @@ async function init() {
     let busy = false;
     let inputQueue = [];
     slider.oninput = async () => {
-        inputQueue.push(slider.value);
+        inputQueue.push(slider.value / 100);
         
         if (busy)
             return;
