@@ -203,6 +203,13 @@ async function computeBlur(radius) {
     resultsBuffer.unmap();
 }
 
+/*function render() {
+  drawCommands();
+}
+function drawCommands() {
+  requestAnimationFrame(render);
+}*/
+
 window.addEventListener("load", init);
 
 /* Helpers */
